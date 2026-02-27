@@ -1,0 +1,97 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-primario);
+  padding: 18px 25px;
+  border-bottom: 4px solid var(--color-secundario);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+/* Estado al hacer scroll */
+.navbar.scrolled {
+  padding: 10px 25px;
+  background: #1c334a;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+/* Logo */
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo-navbar {
+  height: 60px;
+  transition: all 0.4s ease;
+}
+
+.navbar.scrolled .logo-navbar {
+  height: 45px;
+}
+
+/* Menú */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: var(--color-secundario);
+}
+
+/* Botón móvil */
+.menu-btn {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .logo-navbar {
+    height: 50px;
+  }
+
+  .navbar.scrolled .logo-navbar {
+    height: 40px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--color-primario);
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+    gap: 18px;
+  }
+
+  .menu.abierto {
+    display: flex;
+  }
+}

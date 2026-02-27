@@ -1,0 +1,19 @@
+<nav class="navbar" [class.scrolled]="scrolled">
+  <!-- LOGO CLICKEABLE -->
+  <a routerLink="/" class="logo-link">
+    <img
+      src="/nombrecolegio.png"
+      alt="Instituto Gabriel Aresti"
+      class="logo-navbar"
+    />
+  </a>
+  <button class="menu-btn" (click)="toggleMenu()">
+    ☰
+  </button>
+
+  <ul class="menu" [class.abierto]="menuAbierto">
+    <li><a routerLink="/" (click)="cerrarMenu()">Inicio</a></li>
+    <li><a routerLink="/nosotros" (click)="cerrarMenu()">Nosotros</a></li>
+    <li><a routerLink="/contacto" (click)="cerrarMenu()">Contacto</a></li>
+  </ul>
+</nav>

@@ -1,0 +1,151 @@
+<section class="nosotros">
+
+  <!-- HERO / PRESENTACIÓN -->
+  <div class="hero-nosotros fade-in">
+    <h1>Sobre Nuestro Colegio</h1>
+    <p>
+      En el Instituto Gabriel Aresti formamos estudiantes con valores,
+      disciplina y excelencia académica.
+    </p>
+  </div>
+
+  <!-- HISTORIA -->
+  <div class="historia fade-in">
+    <div class="historia-texto">
+      <h2>Nuestra Historia</h2>
+      <p>
+        Nuestro colegio nace con el compromiso de brindar educación de calidad,
+        formando estudiantes responsables, creativos y preparados para el futuro.
+      </p>
+      <p>
+        A lo largo de los años hemos construido una comunidad educativa basada
+        en el respeto, el conocimiento y el desarrollo integral de cada alumno.
+      </p>
+    </div>
+
+    <!-- CARRUSEL DESLIZANTE -->
+    <div class="carrusel">
+        <div class="slides" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+            <div class="slide" *ngFor="let img of galeria">
+                <img [src]="img" (click)="abrirImagen(img)" alt="Imagen del colegio"/>
+            </div>
+        </div>
+
+        <!-- Botones -->
+        <button class="btn anterior" (click)="anterior()">❮</button>
+        <button class="btn siguiente" (click)="siguiente()">❯</button>
+
+        <!-- Indicadores -->
+        <div class="indicadores">
+            <span *ngFor="let img of galeria; let i = index" [class.activo]="i === currentIndex" (click)="irA(i)"></span>
+        </div>
+    </div>
+    <!-- BANNER GALERÍA -->
+    <!--<div class="banner-galeria">
+        <div class="imagenes-banner">
+            <img *ngFor="let img of galeria" [src]="img" (click)="abrirImagen(img)" alt="Galería del colegio"/>
+        </div>
+    </div>-->
+
+    <!-- LIGHTBOX -->
+    <!--<div class="lightbox" *ngIf="imagenSeleccionada" (click)="cerrarImagen()">
+        <img [src]="imagenSeleccionada" alt="Imagen ampliada">
+    </div>-->
+  </div>
+
+  <!-- MISIÓN Y VISIÓN -->
+  <div class="mision-vision fade-in">
+
+    <div class="card">
+      <h3>Misión</h3>
+      <p>
+        Brindar educación integral de calidad, fomentando valores,
+        responsabilidad y excelencia académica en nuestros estudiantes.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Visión</h3>
+      <p>
+        Ser una institución educativa reconocida por formar líderes
+        comprometidos con la sociedad y preparados para el futuro.
+      </p>
+    </div>
+
+  </div>
+
+<!-- EQUIPO DIRECTIVO -->
+<section class="equipo">
+
+  <h2>Equipo Directivo</h2>
+
+  <div class="equipo-grid">
+
+    <div class="miembro">
+      <img src="/directivos/director.jpg" alt="Director">
+      <h3>Dr. Juan Pérez</h3>
+      <p class="cargo">Director General</p>
+      <p class="descripcion">
+        Comprometido con la excelencia académica y la formación integral de nuestros estudiantes.
+      </p>
+    </div>
+
+    <div class="miembro">
+      <img src="/directivos/subdirector.jpg" alt="Subdirector">
+      <h3>Mtra. Ana López</h3>
+      <p class="cargo">Subdirectora Académica</p>
+      <p class="descripcion">
+        Liderando procesos educativos innovadores y fortaleciendo el desarrollo docente.
+      </p>
+    </div>
+
+    <div class="miembro">
+      <img src="/directivos/coordinador.jpg" alt="Coordinador">
+      <h3>Lic. Carlos Ramírez</h3>
+      <p class="cargo">Coordinador General</p>
+      <p class="descripcion">
+        Responsable de la organización institucional y acompañamiento académico.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- NIVELES EDUCATIVOS -->
+  <div class="niveles-section fade-in">
+    <h2>Niveles Educativos</h2>
+
+    <div class="niveles">
+
+      <div class="nivel-card">
+        <div class="nivel-icono">🎨</div>
+        <h3>Preescolar</h3>
+        <p>
+          Desarrollo de habilidades sociales, creatividad y aprendizaje
+          a través del juego y la exploración.
+        </p>
+      </div>
+
+      <div class="nivel-card">
+        <div class="nivel-icono">📚</div>
+        <h3>Primaria</h3>
+        <p>
+          Formación académica sólida que fortalece el conocimiento,
+          valores y disciplina.
+        </p>
+      </div>
+
+      <div class="nivel-card">
+        <div class="nivel-icono">🎓</div>
+        <h3>Secundaria</h3>
+        <p>
+          Preparación para retos académicos, desarrollo tecnológico
+          y crecimiento personal.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</section>

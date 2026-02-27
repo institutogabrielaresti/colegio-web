@@ -1,0 +1,68 @@
+<section class="contacto-container">
+
+  <div class="contacto-grid">
+
+    <!-- FORMULARIO -->
+    <div class="formulario">
+      <h2>Contáctanos</h2>
+
+      <form (ngSubmit)="enviarFormulario()">
+        <input
+          type="text"
+          placeholder="Nombre"
+          name="nombre"
+          [(ngModel)]="nombre"
+          required
+        />
+
+        <input
+          type="email"
+          placeholder="Correo electrónico"
+          name="email"
+          [(ngModel)]="email"
+          required
+        />
+
+        <textarea
+          placeholder="Mensaje"
+          name="mensaje"
+          [(ngModel)]="mensaje"
+          rows="5"
+          required
+        ></textarea>
+
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </div>
+
+  <div class="mapa">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d898.5682042248101!2d-100.20150205436539!3d25.72849012830168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662ea4d2025b405%3A0xb0de11759610b797!2sGabriel%20Aresti%20Institute!5e0!3m2!1ses!2smx!4v1772130839757!5m2!1ses!2smx" 
+      width="500" 
+      height="350" 
+      style="border:1;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+<!-- INFORMACIÓN DEL COLEGIO -->
+  <div class="info-colegio">
+    <div class="info-item">
+      <h4>Dirección</h4>
+      <p>Calle Océano Pacífico, Gral. Leandro Valle 1008, 67117 Guadalupe</p>
+    </div>
+
+    <div class="info-item">
+      <h4>Teléfono</h4>
+      <p>+52 811 090 8920</p>
+      <p>+52 812 517 8937</p>
+    </div>
+
+    <div class="info-item">
+      <h4>Horario</h4>
+      <p>Lunes a Viernes<br>7:00 AM - 3:00 PM</p>
+    </div>
+  </div>
+
+</section>
