@@ -1,0 +1,26 @@
+.calendario-dropdown{
+  position:absolute;
+  top:40px;
+  right:0;
+  width:260px;
+  background:white;
+  border-radius:10px;
+  box-shadow:0 10px 20px rgba(0,0,0,.2);
+  padding:15px;
+}
+
+.evento{
+  margin-bottom:8px;
+  font-size:14px;
+}
+
+.fecha{
+  color:#d4a017;
+  font-weight:bold;
+}
+
+.ver-todo{
+  display:block;
+  margin-top:10px;
+  text-align:center;
+}
