@@ -48,6 +48,36 @@
   margin-bottom: 25px;
 }
 
+.hero-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 30px;
+
+  background-color: #d4a017; /* dorado institucional */
+  color: #1f3a56; /* azul del colegio */
+
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.hero-btn:hover {
+  background-color: #f2b705;
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.hero-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
 /* CTA INSCRIPCIONES */
 
 .cta-inscripciones {
