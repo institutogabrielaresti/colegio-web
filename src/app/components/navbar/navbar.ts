@@ -215,23 +215,4 @@ export class NavbarComponent implements OnInit {
     }
 
   }
-
-  /* ============================= */
-  /* Obtener nombre del evento     */
-  /* ============================= */
-
-  obtenerTituloEvento(dia:number){
-
-  const mes = this.mesIndex + 1;
-  const año = this.anioActual;
-
-  const fecha =
-    `${año}-${String(mes).padStart(2,'0')}-${String(dia).padStart(2,'0')}`;
-
-  const evento = this.eventos.find(e => e.fecha === fecha);
-
-  return evento ? evento.titulo : '';
-
-}
-
 }

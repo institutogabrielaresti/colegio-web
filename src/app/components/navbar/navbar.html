@@ -66,9 +66,7 @@
                 {{dia}}
 
                 @if (tieneEvento(dia)) {
-                <div class="evento-mini">
-                  {{ obtenerTituloEvento(dia) }}
-                </div>
+                  <span class="punto"></span>
                 }
 
                 @if (eventoHover?.dia === dia) {

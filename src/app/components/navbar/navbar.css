@@ -384,39 +384,3 @@
   transform:translateY(1px);
 
 }
-
-/* evento dentro del día */
-
-.evento-mini{
-
-  font-size:9px;
-
-  background:var(--color-secundario);
-
-  color:white;
-
-  padding:2px 3px;
-
-  border-radius:3px;
-
-  margin-top:2px;
-
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-
-}
-
-@keyframes fadeMes{
-
-  from{
-    opacity:0;
-    transform:translateY(6px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
-}
