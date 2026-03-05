@@ -1,35 +1,29 @@
-import { Component, HostListener, OnInit  } from '@angular/core';
-import { RouterLink, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { isPlatformBrowser } from '@angular/common';
-import { PLATFORM_ID, inject } from '@angular/core';
-import { ViewEncapsulation } from '@angular/core';
+import { PLATFORM_ID, inject, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterModule, CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './navbar.html',
   styleUrls: ['./navbar.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
 
   platformId = inject(PLATFORM_ID);
 
   constructor(private http: HttpClient) {}
 
+  /* ============================= */
+  /* NAVBAR */
+  /* ============================= */
+
   menuAbierto = false;
   scrolled = false;
-
-  mesActual = '';
-  anioActual = 0;
-  mesIndex = 0;
-  mostrarCalendario = false;
-  dias: number[] = [];
-  eventos: any[] = [];
-  eventoHover:any = null;
 
   toggleMenu() {
     this.menuAbierto = !this.menuAbierto;
@@ -39,98 +33,194 @@ export class NavbarComponent {
     this.menuAbierto = false;
   }
 
-  @HostListener('window:scroll', [])
+  @HostListener('window:scroll')
   onScroll() {
     this.scrolled = window.scrollY > 50;
   }
 
-  /*Calendario*/
+  /* ============================= */
+  /* CALENDARIO */
+  /* ============================= */
+
+  mesActual = '';
+  anioActual = 0;
+  mesIndex = 0;
+
+  mostrarCalendario = false;
+
+  dias: number[] = [];
+  eventos: any[] = [];
+
+  eventoHover: any = null;
+
   toggleCalendario() {
     this.mostrarCalendario = !this.mostrarCalendario;
   }
 
   ngOnInit() {
+
+    const hoy = new Date();
+
+    this.anioActual = hoy.getFullYear();
+    this.mesIndex = hoy.getMonth();
+
     this.generarCalendario();
+
     if (isPlatformBrowser(this.platformId)) {
       this.cargarEventos();
     }
+
   }
+
+  /* ============================= */
+  /* GENERAR CALENDARIO */
+  /* ============================= */
 
   generarCalendario(){
 
-  const hoy = new Date();
+    const ultimoDia = new Date(
+      this.anioActual,
+      this.mesIndex + 1,
+      0
+    ).getDate();
 
-  const año = this.anioActual || hoy.getFullYear();
-  const mes = this.mesIndex || hoy.getMonth();
+    this.mesActual = new Date(
+      this.anioActual,
+      this.mesIndex
+    ).toLocaleString('es', { month: 'long' });
 
-  const ultimoDia = new Date(año, mes + 1, 0).getDate();
+    this.dias = Array.from({ length: ultimoDia }, (_, i) => i + 1);
 
-  this.anioActual = año;
-
-  this.mesActual = new Date(año, mes)
-    .toLocaleString('es', { month: 'long' });
-
-  this.dias = Array.from({ length: ultimoDia }, (_, i) => i + 1);
-}
-
-mesAnterior(){
-
-  this.mesIndex--;
-
-  if(this.mesIndex < 0){
-    this.mesIndex = 11;
-    this.anioActual--;
   }
 
-  this.generarCalendario();
+  mesAnterior(){
 
-}
+    this.mesIndex--;
 
-mesSiguiente(){
+    if(this.mesIndex < 0){
+      this.mesIndex = 11;
+      this.anioActual--;
+    }
 
-  this.mesIndex++;
+    this.generarCalendario();
 
-  if(this.mesIndex > 11){
-    this.mesIndex = 0;
-    this.anioActual++;
   }
 
-  this.generarCalendario();
+  mesSiguiente(){
 
-}
+    this.mesIndex++;
 
-esHoy(dia:number){
+    if(this.mesIndex > 11){
+      this.mesIndex = 0;
+      this.anioActual++;
+    }
 
-  const hoy = new Date();
+    this.generarCalendario();
 
-  return (
-    dia === hoy.getDate() &&
-    this.mesIndex === hoy.getMonth() &&
-    this.anioActual === hoy.getFullYear()
-  );
+  }
 
-}
+  /* ============================= */
+  /* DIA ACTUAL */
+  /* ============================= */
+
+  esHoy(dia:number){
+
+    const hoy = new Date();
+
+    return (
+      dia === hoy.getDate() &&
+      this.mesIndex === hoy.getMonth() &&
+      this.anioActual === hoy.getFullYear()
+    );
+
+  }
+
+  /* ============================= */
+  /* EVENTOS */
+  /* ============================= */
 
   cargarEventos() {
 
-  this.http.get<any>('assets/eventos.json')
-    .subscribe(data => {
-      this.eventos = data.eventos;
-    });
+    this.http.get<any>('assets/eventos.json')
+      .subscribe(data => {
+
+        this.eventos = data.eventos || [];
+
+        /* ordenar eventos por fecha */
+        this.eventos.sort((a:any,b:any) =>
+          new Date(a.fecha).getTime() -
+          new Date(b.fecha).getTime()
+        );
+
+      });
+
   }
+
+  /* ============================= */
+  /* VERIFICAR EVENTO EN DIA */
+  /* ============================= */
 
   tieneEvento(dia:number){
 
-  const mes = this.mesIndex + 1;
-  const año = this.anioActual;
+    const mes = this.mesIndex + 1;
+    const año = this.anioActual;
 
-  const fecha = `${año}-${String(mes).padStart(2,'0')}-${String(dia).padStart(2,'0')}`;
+    const fecha =
+      `${año}-${String(mes).padStart(2,'0')}-${String(dia).padStart(2,'0')}`;
 
-  return this.eventos.some(e => e.fecha === fecha);
+    return this.eventos.some(e => e.fecha === fecha);
 
-}
+  }
 
-mostrarEvento(dia: number) {
+  /* ============================= */
+  /* TOOLTIP EVENTO */
+  /* ============================= */
+
+  mostrarEvento(dia:number){
+
+    const mes = this.mesIndex + 1;
+    const año = this.anioActual;
+
+    const fecha =
+      `${año}-${String(mes).padStart(2,'0')}-${String(dia).padStart(2,'0')}`;
+
+    const evento = this.eventos.find(e => e.fecha === fecha);
+
+    if(evento){
+
+      this.eventoHover = {
+        dia: dia,
+        titulo: evento.titulo
+      };
+
+    } else {
+
+      this.eventoHover = null;
+
+    }
+
+  }
+
+  /* ============================= */
+  /* CERRAR CALENDARIO CLICK FUERA */
+  /* ============================= */
+
+  @HostListener('document:click', ['$event'])
+  cerrarCalendario(event:Event){
+
+    const elemento = event.target as HTMLElement;
+
+    if(!elemento.closest('.calendario-item')){
+      this.mostrarCalendario = false;
+    }
+
+  }
+
+  /* ============================= */
+  /* Obtener nombre del evento     */
+  /* ============================= */
+
+  obtenerTituloEvento(dia:number){
 
   const mes = this.mesIndex + 1;
   const año = this.anioActual;
@@ -140,24 +230,8 @@ mostrarEvento(dia: number) {
 
   const evento = this.eventos.find(e => e.fecha === fecha);
 
-  if (evento) {
-    this.eventoHover = {
-      dia: dia,
-      titulo: evento.titulo
-    };
-  }
+  return evento ? evento.titulo : '';
 
 }
 
-/*Salir del calendario con click*/
-@HostListener('document:click', ['$event'])
-cerrarCalendario(event:Event){
-
-  const elemento = event.target as HTMLElement;
-
-  if(!elemento.closest('.calendario-item')){
-    this.mostrarCalendario = false;
-  }
-
-}
 }
