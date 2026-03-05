@@ -16,5 +16,60 @@
     <li><a routerLink="/nosotros" (click)="cerrarMenu()">Nosotros</a></li>
     <li><a routerLink="/contacto" (click)="cerrarMenu()">Contacto</a></li>
     <li><a routerLink="/calendario">Calendario</a></li>
+    <!--Calendario-->
+    <li class="calendario-item">
+      <button (click)="toggleCalendario()" class="calendario-btn">
+        📅 Calendario
+      </button>
+      <div class="calendario-widget" *ngIf="mostrarCalendario">
+
+  <div class="cal-header">
+    <button (click)="mesAnterior()">‹</button>
+    <h4>{{mesActual}} {{anioActual}}</h4>
+    <button (click)="mesSiguiente()">›</button>
+  </div>
+
+  <!-- DIAS SEMANA -->
+  <div class="dias-semana">
+    <span>L</span>
+    <span>M</span>
+    <span>X</span>
+    <span>J</span>
+    <span>V</span>
+    <span>S</span>
+    <span>D</span>
+  </div>
+
+  <!-- DIAS -->
+  <div class="grid">
+
+  <div *ngFor="let dia of dias"
+      class="dia"
+      [class.hoy]="esHoy(dia)"
+      [class.evento]="tieneEvento(dia)"
+      (mouseenter)="mostrarEvento(dia)"
+      (mouseleave)="eventoHover = null">
+
+    {{dia}}
+
+    <span *ngIf="tieneEvento(dia)" class="punto"></span>
+
+    <div *ngIf="eventoHover?.dia === dia" class="tooltip">
+      {{eventoHover.titulo}}
+    </div>
+
+  </div>
+
+</div>
+
+  <h5>Próximos eventos</h5>
+
+  <div *ngFor="let evento of eventos" class="evento-lista">
+    <span class="fecha">{{evento.fecha}}</span>
+    <p>{{evento.titulo}}</p>
+  </div>
+
+</div>
+  </li>
   </ul>
 </nav>

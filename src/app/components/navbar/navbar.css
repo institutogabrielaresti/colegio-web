@@ -95,3 +95,164 @@
     display: flex;
   }
 }
+
+/*Calendario*/
+  .calendario-widget {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  animation: abrirCalendario .25s ease;
+  width: 280px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.2);
+  padding: 15px;
+  z-index: 1000;
+}
+
+/* GRID DEL CALENDARIO */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.grid div {
+  text-align: center;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 13px;
+
+  background: #f3f3f3;
+}
+
+.grid div.evento {
+  background: #d4a017;
+  color: white;
+  font-weight: bold;
+}
+
+/* lista eventos */
+
+.evento-lista {
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.fecha {
+  font-weight: bold;
+  color: #1f3a56;
+}
+
+.cal-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.cal-header button{
+  border:none;
+  background:#d4a017;
+  color:white;
+  width:28px;
+  height:28px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.dias-semana{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  text-align:center;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:5px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:6px;
+}
+
+.grid div{
+  text-align:center;
+  padding:6px;
+  border-radius:6px;
+  font-size:13px;
+  background:#f3f3f3;
+}
+
+.grid div.hoy{
+  border:2px solid #1f3a56;
+  font-weight:bold;
+}
+
+.grid div.evento{
+  background:#d4a017;
+  color:white;
+}
+
+@keyframes abrirCalendario{
+
+  from{
+    opacity:0;
+    transform:translateY(-10px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.dia{
+  position:relative;
+}
+
+.punto{
+
+  position:absolute;
+
+  bottom:3px;
+  left:50%;
+
+  width:6px;
+  height:6px;
+
+  background:#d4a017;
+
+  border-radius:50%;
+
+  transform:translateX(-50%);
+}
+
+/*Tooltip*/
+.tooltip{
+
+  position:absolute;
+
+  bottom:120%;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  background:#1f3a56;
+  color:white;
+
+  padding:5px 8px;
+
+  border-radius:5px;
+
+  font-size:11px;
+
+  white-space:nowrap;
+
+  box-shadow:0 5px 12px rgba(0,0,0,.2);
+
+}
