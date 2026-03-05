@@ -1,0 +1,20 @@
+{
+  "eventos": [
+    {
+      "fecha": "2026-09-12",
+      "titulo": "Inicio de clases"
+    },
+    {
+      "fecha": "2026-09-15",
+      "titulo": "Acto cívico"
+    },
+    {
+      "fecha": "2026-09-20",
+      "titulo": "Festival cultural"
+    },
+    {
+      "fecha": "2026-10-02",
+      "titulo": "Evaluación bimestral"
+    }
+  ]
+}
