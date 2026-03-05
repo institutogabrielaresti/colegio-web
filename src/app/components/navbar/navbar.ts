@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID, inject } from '@angular/core';
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [RouterModule, CommonModule, RouterLink],
   templateUrl: './navbar.html',
-  styleUrls: ['./navbar.css']
+  styleUrls: ['./navbar.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class NavbarComponent {
 
@@ -119,31 +121,29 @@ esHoy(dia:number){
 
   tieneEvento(dia:number){
 
-    const hoy = new Date();
-    const mes = hoy.getMonth() + 1;
-    const año = hoy.getFullYear();
-
-    const fecha = `${año}-${String(mes).padStart(2,'0')}-${String(dia).padStart(2,'0')}`;
-
-    return this.eventos.some(e => e.fecha === fecha);
-
-  }
-
-mostrarEvento(dia:number){
-
-  const hoy = new Date();
-
   const mes = this.mesIndex + 1;
   const año = this.anioActual;
 
   const fecha = `${año}-${String(mes).padStart(2,'0')}-${String(dia).padStart(2,'0')}`;
 
+  return this.eventos.some(e => e.fecha === fecha);
+
+}
+
+mostrarEvento(dia: number) {
+
+  const mes = this.mesIndex + 1;
+  const año = this.anioActual;
+
+  const fecha =
+    `${año}-${String(mes).padStart(2,'0')}-${String(dia).padStart(2,'0')}`;
+
   const evento = this.eventos.find(e => e.fecha === fecha);
 
-  if(evento){
+  if (evento) {
     this.eventoHover = {
-      dia,
-      titulo:evento.titulo
+      dia: dia,
+      titulo: evento.titulo
     };
   }
 
