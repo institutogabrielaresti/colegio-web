@@ -1,8 +1,40 @@
 {
   "eventos": [
     {
+      "fecha": "2026-03-16",
+      "titulo": "Asueto Escolar Natalicio Benito Jaurez"
+    },
+    {
+      "fecha": "2026-06-26",
+      "titulo": "Consejo Tecnico"
+    },
+    {
+      "fecha": "2026-05-05",
+      "titulo": "Asueto Batalla de Puebla"
+    },
+    {
+      "fecha": "2026-05-15",
+      "titulo": "Día del Maestro"
+    },
+    {
       "fecha": "2026-03-30",
       "titulo": "Inicio de Vacaciones Semana Santa"
+    },
+    {
+      "fecha": "2026-04-13",
+      "titulo": "Regreso Clases Vacaciones Semana Santa"
+    },
+    {
+      "fecha": "2026-03-27",
+      "titulo": "Consejo Tecnico "
+    },
+    {
+      "fecha": "2026-05-29",
+      "titulo": "Consejo Tecnico"
+    },
+    {
+      "fecha": "2026-05-01",
+      "titulo": "Asueto día del Trabajo"
     }
   ]
 }

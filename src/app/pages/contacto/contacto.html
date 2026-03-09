@@ -4,17 +4,25 @@
 
     <!-- FORMULARIO -->
     <div class="formulario">
-      <h2>Contáctanos</h2>
 
-      <form (ngSubmit)="enviarFormulario()">
+      <h2>Solicitar Informes</h2>
+
+      <p class="intro">
+        Completa el siguiente formulario y nos pondremos en contacto contigo.
+      </p>
+
+      <form (ngSubmit)="enviarFormulario()" #formContacto="ngForm">
+
+        <!-- NOMBRE -->
         <input
           type="text"
-          placeholder="Nombre"
+          placeholder="Nombre completo"
           name="nombre"
           [(ngModel)]="nombre"
           required
         />
 
+        <!-- CORREO -->
         <input
           type="email"
           placeholder="Correo electrónico"
@@ -23,6 +31,29 @@
           required
         />
 
+        <!-- TELEFONO -->
+        <input
+          type="text"
+          placeholder="Teléfono"
+          name="telefono"
+          [(ngModel)]="telefono"
+        />
+
+        <!-- NIVEL -->
+        <select
+          name="nivel"
+          [(ngModel)]="nivel"
+          required
+        >
+          <option value="" disabled selected>
+            Nivel de interés
+          </option>
+          <option value="Preescolar">Preescolar</option>
+          <option value="Primaria">Primaria</option>
+          <option value="Secundaria">Secundaria</option>
+        </select>
+
+        <!-- MENSAJE -->
         <textarea
           placeholder="Mensaje"
           name="mensaje"
@@ -31,26 +62,55 @@
           required
         ></textarea>
 
-        <button type="submit">Enviar mensaje</button>
+        <!-- BOTON -->
+        <button
+          type="submit"
+          [disabled]="formContacto.invalid || enviando"
+        >
+
+          {{ enviando ? 'Enviando...' : 'Enviar mensaje' }}
+
+        </button>
+
+        <!-- MENSAJE OK -->
+        <p class="mensaje-ok" *ngIf="enviado">
+          ✔ Tu mensaje fue enviado correctamente.
+          Nos pondremos en contacto contigo pronto.
+        </p>
+
       </form>
+
     </div>
 
-  <div class="mapa">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d898.5682042248101!2d-100.20150205436539!3d25.72849012830168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662ea4d2025b405%3A0xb0de11759610b797!2sGabriel%20Aresti%20Institute!5e0!3m2!1ses!2smx!4v1772130839757!5m2!1ses!2smx" 
-      width="500" 
-      height="350" 
-      style="border:1;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+    <!-- MAPA -->
+
+    <div class="mapa">
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d898.5682042248101!2d-100.20150205436539!3d25.72849012830168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662ea4d2025b405%3A0xb0de11759610b797!2sGabriel%20Aresti%20Institute!5e0!3m2!1ses!2smx!4v1772130839757!5m2!1ses!2smx"
+        width="100%"
+        height="350"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+
+    </div>
+
   </div>
-</div>
-<!-- INFORMACIÓN DEL COLEGIO -->
+
+
+  <!-- INFORMACIÓN DEL COLEGIO -->
+
   <div class="info-colegio">
+
     <div class="info-item">
       <h4>Dirección</h4>
-      <p>Calle Océano Pacífico, Gral. Leandro Valle 1008, 67117 Guadalupe</p>
+      <p>
+        Calle Océano Pacífico,<br>
+        Gral. Leandro Valle 1008,<br>
+        67117 Guadalupe, N.L.
+      </p>
     </div>
 
     <div class="info-item">
@@ -61,8 +121,12 @@
 
     <div class="info-item">
       <h4>Horario</h4>
-      <p>Lunes a Viernes<br>7:00 AM - 3:00 PM</p>
+      <p>
+        Lunes a Viernes<br>
+        7:00 AM - 3:00 PM
+      </p>
     </div>
+
   </div>
 
 </section>
