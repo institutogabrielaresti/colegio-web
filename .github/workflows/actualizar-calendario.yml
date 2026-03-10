@@ -1,0 +1,35 @@
+name: Actualizar calendario
+
+on:
+  schedule:
+    - cron: '0 */24 * * *'  # cada 24 horas
+  workflow_dispatch:
+
+jobs:
+
+  actualizar:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Instalar Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Ejecutar script
+        run: node scripts/google-calendar-sync.js
+
+      - name: Commit cambios
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add src/assets/eventos.json
+          git commit -m "Actualización automática calendario" || echo "Sin cambios"
+
+      - name: Push cambios
+        run: git push
