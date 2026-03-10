@@ -1,34 +1,38 @@
+/* ========================= */
+/* HERO */
+/* ========================= */
+
 .hero {
   min-height: 90vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   text-align: center;
-  position: relative;
   color: white;
+
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   overflow: hidden;
 }
 
-/* Imagen de fondo */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;  /* evita repetición */
-  z-index: 0;
-}
+/* Overlay institucional */
 
-/* Overlay azul institucional */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
     rgba(15, 35, 55, 0.75),
     rgba(31, 58, 86, 0.85)
   );
+
   z-index: 1;
 }
 
@@ -48,13 +52,15 @@
   margin-bottom: 25px;
 }
 
+/* BOTÓN HERO */
+
 .hero-btn {
   display: inline-block;
   margin-top: 20px;
   padding: 14px 30px;
 
-  background-color: #d4a017; /* dorado institucional */
-  color: #1f3a56; /* azul del colegio */
+  background-color: #d4a017;
+  color: #1f3a56;
 
   font-size: 16px;
   font-weight: 600;
@@ -69,7 +75,6 @@
 .hero-btn:hover {
   background-color: #f2b705;
   transform: translateY(-3px);
-
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
@@ -78,17 +83,43 @@
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
+
+/* ========================= */
 /* CTA INSCRIPCIONES */
+/* ========================= */
 
 .cta-inscripciones {
-  padding: 80px 20px;
-  background: linear-gradient(
-    135deg,
-    var(--color-primario),
-    var(--color-azul)
-  );
+
+  position: relative;
+
+  padding: 70px 20px;
+
   text-align: center;
   color: white;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* overlay para mejorar contraste */
+
+.cta-inscripciones::before {
+
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(31,58,86,.75);
+
+}
+
+.cta-contenido{
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: auto;
 }
 
 .cta-inscripciones h2 {
@@ -97,14 +128,22 @@
 }
 
 .cta-btn {
+
   display: inline-block;
+
   margin-top: 20px;
+
   background: var(--color-secundario);
   color: #1f3a56;
+
   padding: 14px 28px;
+
   border-radius: 10px;
+
   text-decoration: none;
+
   font-weight: bold;
+
   transition: 0.3s;
 }
 
@@ -113,89 +152,11 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* NOTICIAS */
 
-.noticias {
-  padding: 70px 20px;
-  text-align: center;
-  background: #f8f9fb;
-}
-
-.noticias h2 {
-  margin-bottom: 40px;
-  color: var(--color-primario);
-}
-
-.noticias-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.noticia-card {
-  background: white;
-  padding: 25px;
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
-
-.noticia-card:hover {
-  transform: translateY(-6px);
-}
-
-@media (max-width: 900px) {
-  .noticias-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .escudo {
-    width: 120px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-}
-
-.escudo {
-  width: 400px;
-  height: auto;
-  margin-bottom: 25px;
-  animation: escudoEntrada 1s ease;
-  filter: drop-shadow(0px 8px 20px rgba(0,0,0,0.25));
-  transition: transform 0.3s ease;
-}
-
-.info {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 40px;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  border-top: 4px solid var(--color-secundario);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
+/* ========================= */
 /* POR QUÉ ELEGIRNOS */
+/* ========================= */
+
 .porque {
   padding: 70px 20px;
   text-align: center;
@@ -214,10 +175,15 @@
 }
 
 .porque-card {
+
   background: white;
+
   padding: 30px 20px;
+
   border-radius: 18px;
+
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
   transition: 0.3s;
 }
 
@@ -230,25 +196,112 @@
   margin-bottom: 15px;
 }
 
-@media (max-width: 900px) {
-  .porque-grid {
-    grid-template-columns: 1fr;
-  }
+
+/* ========================= */
+/* OFERTA EDUCATIVA */
+/* ========================= */
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  padding: 40px;
 }
 
+.card {
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  border-top: 4px solid var(--color-secundario);
+
+  text-align: center;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+
+  transform: translateY(-6px);
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+
+/* ========================= */
+/* NOTICIAS */
+/* ========================= */
+
+.noticias {
+
+  padding: 70px 20px;
+
+  text-align: center;
+
+  background: #f8f9fb;
+}
+
+.noticias h2 {
+  margin-bottom: 40px;
+  color: var(--color-primario);
+}
+
+.noticias-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.noticia-card {
+
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 18px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+  transition: 0.3s;
+}
+
+.noticia-card:hover {
+  transform: translateY(-6px);
+}
+
+
+/* ========================= */
 /* ESTADÍSTICAS */
+/* ========================= */
+
 .estadisticas {
+
   background: var(--color-primario);
+
   color: white;
+
   padding: 60px 20px;
+
   display: flex;
+
   justify-content: center;
+
   gap: 80px;
+
   text-align: center;
 }
 
 .estadistica h3 {
+
   font-size: 40px;
+
   color: var(--color-secundario);
 }
 
@@ -256,40 +309,70 @@
   margin-top: 8px;
 }
 
-@media (max-width: 900px) {
-  .estadisticas {
-    flex-direction: column;
-    gap: 30px;
-  }
+
+/* ========================= */
+/* ESCUDO */
+/* ========================= */
+
+.escudo {
+
+  width: 400px;
+
+  height: auto;
+
+  margin-bottom: 25px;
+
+  filter: drop-shadow(0px 8px 20px rgba(0,0,0,0.25));
+
+  transition: transform 0.3s ease;
 }
 
-/* Animación suave del escudo */
-@keyframes moverEscudo {
-  0% {
-    transform: scale(1) translateY(0px);
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 900px){
+
+  .porque-grid{
+    grid-template-columns:1fr;
   }
-  50% {
-    transform: scale(1.05) translateY(-10px);
+
+  .info{
+    grid-template-columns:repeat(2,1fr);
   }
-  100% {
-    transform: scale(1) translateY(0px);
+
+  .noticias-grid{
+    grid-template-columns:1fr;
   }
+
+  .estadisticas{
+    flex-direction:column;
+    gap:30px;
+  }
+
 }
 
-/* Tablet */
-@media (max-width: 900px) {
-  .info {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width:768px){
+
+  .hero h1{
+    font-size:28px;
   }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .hero{
+    padding:40px 15px;
+  }
+
 }
 
-/* Celular */
-@media (max-width: 600px) {
-  .info {
-    grid-template-columns: 1fr;
+@media (max-width:600px){
+
+  .info{
+    grid-template-columns:1fr;
   }
 
-  .hero {
-    padding: 40px 15px;
-  }
 }

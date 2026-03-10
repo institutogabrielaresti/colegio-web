@@ -15,7 +15,8 @@ export class InicioComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
   private cd = inject(ChangeDetectorRef);
 
-  heroImage = 'assets/Edificio_IGA.jpg';
+  heroImage = 'assets/Edificio_IGA.png';
+  bannerImage = 'assets/fondo-inscripciones.png';
 
   alumnos = 0;
   docentes = 0;

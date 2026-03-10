@@ -1,14 +1,17 @@
 <!-- INSCRIPCIONES -->
-<section class="cta-inscripciones">
+<section class="cta-inscripciones"
+        [ngStyle]="{'background-image': 'url(' + bannerImage + ')'}">
   <div class="cta-contenido">
-    <h2>Inscripciones Abiertas 2026</h2>
-    <p>Forma parte de nuestra comunidad educativa y construye tu futuro con nosotros.</p>
 
+    <h2>Inscripciones Abiertas 2026 - 2027</h2>
     <a routerLink="/contacto" class="cta-btn">
       Solicitar Información
     </a>
+
   </div>
+
 </section>
+
 
 <section class="hero" [style.background-image]="'url(' + heroImage + ')'">
   <div class="hero-contenido fade-in">
@@ -23,8 +26,9 @@
   </div>
 </section>
 
+
 <!-- POR QUÉ ELEGIRNOS -->
-<section class="porque fade-in" >
+<section class="porque fade-in">
 
   <h2>¿Por qué elegirnos?</h2>
 
@@ -53,31 +57,15 @@
       <h3>Formación Integral</h3>
       <p>Educación basada en valores, disciplina y excelencia.</p>
     </div>
+
   </div>
+
 </section>
 
-<!-- ESTADÍSTICAS 
-<section class="estadisticas">
-
-  <div class="estadistica">
-    <h3>{{ alumnos }}+</h3>
-    <p>Estudiantes</p>
-  </div>
-
-  <div class="estadistica">
-    <h3>{{ docentes }}+</h3>
-    <p>Docentes</p>
-  </div>
-
-  <div class="estadistica">
-    <h3>{{ experiencia }}+</h3>
-    <p>Años de experiencia</p>
-  </div>
-
-</section>-->
 
 <!--Oferta Educativa-->
 <section class="info fade-in">
+
   <div class="card">
     <h3>Educación de Calidad</h3>
     <p>Formación académica con valores y excelencia.</p>
@@ -92,7 +80,9 @@
     <h3>Comunidad</h3>
     <p>Un entorno educativo seguro y colaborativo.</p>
   </div>
+
 </section>
+
 
 <!-- NOTICIAS -->
 <section class="noticias">
@@ -103,17 +93,24 @@
 
     <div class="noticia-card">
       <h3>16 Marzo.- Asueto Natalicio Benito Juarez</h3>
-      <p>En conmemoracion al natalicio de Benito Juarez, el día 16 de Marzo habra suspension de labores.</p>
+      <p>
+        En conmemoracion al natalicio de Benito Juarez, el día 16 de Marzo habrá suspensión de labores.
+      </p>
     </div>
 
     <div class="noticia-card">
       <h3>Inicio de Inscripciones</h3>
-      <p>Abierto el proceso de admisión para el ciclo escolar 2026 - 2027.</p>
+      <p>
+        Abierto el proceso de admisión para el ciclo escolar 2026 - 2027.
+      </p>
     </div>
 
     <div class="noticia-card">
       <h3>19 Marzo.- Evento de la primavera</h3>
-      <p>El día 19 de Marzo esnuestro evento de la primavera, los alumnos de preescolar y primaria menor participan. Hora inicio 9 a.m.</p>
+      <p>
+        El día 19 de Marzo es nuestro evento de la primavera, los alumnos de preescolar
+        y primaria menor participan. Hora inicio 9 a.m.
+      </p>
     </div>
 
   </div>
