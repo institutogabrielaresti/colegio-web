@@ -89,10 +89,8 @@
 /* ========================= */
 
 .cta-inscripciones {
-
   position: relative;
-
-  padding: 70px 20px;
+  padding: 10px 20px;
 
   text-align: center;
   color: white;
@@ -103,18 +101,6 @@
 }
 
 /* overlay para mejorar contraste */
-
-.cta-inscripciones::before {
-
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background: rgba(31,58,86,.75);
-
-}
-
 .cta-contenido{
   position: relative;
   z-index: 2;
