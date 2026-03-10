@@ -34,10 +34,10 @@ export class ContactoComponent {
     };
 
     emailjs.send(
-      'SERVICE_ID',   // reemplazar
-      'TEMPLATE_ID',  // reemplazar
+      'service_bibcq4y',   // reemplazar
+      'template_mxwz0mf',  // reemplazar
       templateParams,
-      'PUBLIC_KEY'    // reemplazar
+      'Ig44OmmF4MhDJQc2h'    // reemplazar
     )
     .then(() => {
 
