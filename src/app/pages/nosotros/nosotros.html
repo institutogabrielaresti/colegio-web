@@ -11,126 +11,159 @@
 
   <!-- HISTORIA -->
   <div class="historia fade-in">
+
     <div class="historia-texto">
       <h2>Nuestra Historia</h2>
+
       <p>
         El instituto Gabriel Aresti inició sus actividades en el año 2004, con el sueño
-        de crear un espacio educativo de calidad para los niños.
-        El proyecto comenzó en un terreno baldio, donde poco a poco se fue construyendo
-        la institucion. 
-        En sus inicios el colegio contaba con un grupo de 4 maestras, 1 
-        directivo, asi como 1 administrativo, quienes trabajaron en conjunto para dar vida 
-        a este proyecto educatvio.  
+        de crear un espacio educativo de calidad para los niños. El proyecto comenzó
+        en un terreno baldío, donde poco a poco se fue construyendo la institución.
       </p>
+
       <p>
-        El primer edificio que se construyó, fue el de prescolar, donde se ofrecian los niveles 
-        de maternal, primero, segundo y tercero, desde entonces, el colegio a crecido hasta contar 
-        con los niveles de prescolar, primaria y secundaria, gracias 
-        al esfuerzo y confianza de sus fundadores y el compromiso con la educacin de sus 
-        estudiantes.  
+        En sus inicios el colegio contaba con un grupo de 4 maestras, 1 directivo
+        y 1 administrativo, quienes trabajaron en conjunto para dar vida a este
+        proyecto educativo.
       </p>
+
       <p>
-        El IGA se ha caracterizado por fometnar valores, aprendizaje y desarrollo integral en cada 
-        uno de sus alumnos, consolidandose como una institución dedicada a la formación de nuevas 
-        generaciones bajo el lema "Calidad, Superación y Excelencia"
+        El primer edificio que se construyó fue el de preescolar. Desde entonces,
+        el colegio ha crecido hasta contar con los niveles de preescolar, primaria
+        y secundaria.
       </p>
+
+      <p>
+        El IGA se ha caracterizado por fomentar valores, aprendizaje y desarrollo
+        integral en cada uno de sus alumnos, consolidándose como una institución
+        dedicada a la formación de nuevas generaciones bajo el lema
+        <strong>"Calidad, Superación y Excelencia"</strong>.
+      </p>
+
     </div>
 
+    <!-- ========================= -->
     <!-- CARRUSEL DESLIZANTE -->
+    <!-- ========================= -->
+
     <div class="carrusel">
-        <div class="slides" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
-            <div class="slide" *ngFor="let img of galeria">
-                <img [src]="img" (click)="abrirImagen(img)" alt="Imagen del colegio"/>
-            </div>
+
+      <div class="slides"
+           [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+
+        <div class="slide" *ngFor="let img of galeria">
+          <img
+            [src]="img"
+            alt="Imagen del colegio"
+            class="imagen-galeria"
+            (click)="abrirImagen(img)"
+          />
         </div>
 
-        <!-- Botones -->
-        <button class="btn anterior" (click)="anterior()">❮</button>
-        <button class="btn siguiente" (click)="siguiente()">❯</button>
+      </div>
 
-        <!-- Indicadores -->
-        <div class="indicadores">
-            <span *ngFor="let img of galeria; let i = index" [class.activo]="i === currentIndex" (click)="irA(i)"></span>
-        </div>
+      <!-- BOTONES -->
+
+      <button class="btn anterior" (click)="anterior()">❮</button>
+      <button class="btn siguiente" (click)="siguiente()">❯</button>
+
+      <!-- INDICADORES -->
+
+      <div class="indicadores">
+        <span
+          *ngFor="let img of galeria; let i = index"
+          [class.activo]="i === currentIndex"
+          (click)="irA(i)">
+        </span>
+      </div>
+
     </div>
-    <!-- BANNER GALERÍA -->
-    <!--<div class="banner-galeria">
-        <div class="imagenes-banner">
-            <img *ngFor="let img of galeria" [src]="img" (click)="abrirImagen(img)" alt="Galería del colegio"/>
-        </div>
-    </div>-->
 
-    <!-- LIGHTBOX -->
-    <!--<div class="lightbox" *ngIf="imagenSeleccionada" (click)="cerrarImagen()">
-        <img [src]="imagenSeleccionada" alt="Imagen ampliada">
-    </div>-->
   </div>
 
+  <!-- ========================= -->
+  <!-- LIGHTBOX ZOOM -->
+  <!-- ========================= -->
+
+  <div class="lightbox"
+       *ngIf="imagenSeleccionada"
+       (click)="cerrarImagen()">
+
+    <img
+      [src]="imagenSeleccionada"
+      alt="Imagen ampliada"
+      class="imagen-zoom"
+      (click)="$event.stopPropagation()"
+    />
+
+  </div>
+
+
   <!-- MISIÓN Y VISIÓN -->
+
   <div class="mision-vision fade-in">
 
     <div class="card">
       <h3>Misión</h3>
       <p>
         Formar ciudadanos de excelencia académica con bases y herramientas
-        sólidas que le permitan la inclusión en un mundo globalizado, 
-        desarrollándose de manera integral en un ambiente cálido, humano y 
-        fraterno, acrecentando continuamente sus competencias.
+        sólidas que le permitan la inclusión en un mundo globalizado,
+        desarrollándose de manera integral en un ambiente cálido,
+        humano y fraterno.
       </p>
     </div>
 
     <div class="card">
       <h3>Visión</h3>
       <p>
-        Ser una institución educativa profesional que, a partir de la promocion
-        de un modelo particular, basado en la formación integral y, en una 
-        estructura organizacional en continuo crecimeinto, se consolide como un 
-        centro educativo de vanguardia y de alta calidad.
+        Ser una institución educativa profesional basada en la formación
+        integral y en una estructura organizacional en continuo crecimiento,
+        consolidándose como un centro educativo de vanguardia.
       </p>
     </div>
 
   </div>
 
-<!-- EQUIPO DIRECTIVO -->
-<section class="equipo">
 
-  <h2>Equipo Directivo</h2>
+  <!-- ========================= -->
+  <!-- EQUIPO DIRECTIVO -->
+  <!-- ========================= -->
 
-  <div class="equipo-grid">
+  <section class="equipo">
 
-    <div class="miembro">
-      <img src="assets/directivos/direccion.png" alt="Director">
-      <h3>Profra. Alma Virtudes Villarreal Garza</h3>
-      <p class="cargo">Director General</p>
-      <p class="descripcion">
-        Comprometido con la excelencia académica y la formación integral de nuestros estudiantes.
-      </p>
+    <h2>Equipo Directivo</h2>
+
+    <div class="equipo-grid">
+
+      <div class="miembro">
+        <img src="assets/directivos/direccion.png" alt="Director">
+        <h3>Profra. Alma Virtudes Villarreal Garza</h3>
+        <p class="cargo">Director General</p>
+      </div>
+
+      <div class="miembro">
+        <img src="assets/directivos/direcciongeneral.png" alt="Directora Académica">
+        <h3>Profra. Mariana Sánchez Carrillo</h3>
+        <p class="cargo">Directora Académica</p>
+      </div>
+
+      <div class="miembro">
+        <img src="assets/directivos/direccionprescolar.png" alt="Directora Preescolar">
+        <h3>Lic. Lizeth Hernandez Fabela</h3>
+        <p class="cargo">Directora Preescolar</p>
+      </div>
+
     </div>
 
-    <div class="miembro">
-      <img src="assets/directivos/direcciongeneral.png" alt="Subdirector">
-      <h3>Profra. Mariana Sánchez Carrillo</h3>
-      <p class="cargo">Directora Académica</p>
-      <p class="descripcion">
-        Liderando procesos educativos innovadores y fortaleciendo el desarrollo docente.
-      </p>
-    </div>
+  </section>
 
-    <div class="miembro">
-      <img src="assets/directivos/direccionprescolar.png" alt="Coordinador">
-      <h3>Lic. Lizeth Hernandez Fabela</h3>
-      <p class="cargo">Directora Prescolar</p>
-      <p class="descripcion">
-        Liderando procesos educativos innovadores y fortaleciendo el desarrollo educativo.
-      </p>
-    </div>
 
-  </div>
-
-</section>
-
+  <!-- ========================= -->
   <!-- NIVELES EDUCATIVOS -->
+  <!-- ========================= -->
+
   <div class="niveles-section fade-in">
+
     <h2>Niveles Educativos</h2>
 
     <div class="niveles">
@@ -138,31 +171,23 @@
       <div class="nivel-card">
         <div class="nivel-icono">🎨</div>
         <h3>Preescolar</h3>
-        <p>
-          Desarrollo de habilidades sociales, creatividad y aprendizaje
-          a través del juego y la exploración.
-        </p>
+        <p>Desarrollo social, creatividad y aprendizaje a través del juego.</p>
       </div>
 
       <div class="nivel-card">
         <div class="nivel-icono">📚</div>
         <h3>Primaria</h3>
-        <p>
-          Formación académica sólida que fortalece el conocimiento,
-          valores y disciplina.
-        </p>
+        <p>Formación académica sólida con valores y disciplina.</p>
       </div>
 
       <div class="nivel-card">
         <div class="nivel-icono">🎓</div>
         <h3>Secundaria</h3>
-        <p>
-          Preparación para retos académicos, desarrollo tecnológico
-          y crecimiento personal.
-        </p>
+        <p>Preparación académica, tecnológica y crecimiento personal.</p>
       </div>
 
     </div>
+
   </div>
 
 </section>

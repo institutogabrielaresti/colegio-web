@@ -2,123 +2,71 @@
 /* NAVBAR */
 /* ===================== */
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--color-primario);
-  padding: 18px 25px;
-  border-bottom: 4px solid var(--color-secundario);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: all 0.4s ease;
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:var(--color-primario);
+  padding:18px 25px;
+  border-bottom:4px solid var(--color-secundario);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  transition:.4s;
 }
 
-.navbar.scrolled {
-  padding: 10px 25px;
-  background: #1c334a;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+.navbar.scrolled{
+  padding:10px 25px;
+  background:#1c334a;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
 }
 
-/* ===================== */
 /* LOGO */
-/* ===================== */
 
-.logo-link {
-  display: flex;
-  align-items: center;
+.logo-link{display:flex;align-items:center}
+
+.logo-navbar{
+  height:60px;
+  transition:.4s;
 }
 
-.logo-navbar {
-  height: 60px;
-  transition: all 0.4s ease;
-}
-
-.navbar.scrolled .logo-navbar {
-  height: 45px;
-}
+.navbar.scrolled .logo-navbar{height:45px}
 
 /* ===================== */
 /* MENU */
 /* ===================== */
 
-.menu {
-  display: flex;
-  list-style: none;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
+.menu{
+  display:flex;
+  list-style:none;
+  gap:25px;
+  margin:0;
+  padding:0;
 }
 
-.menu a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
+.menu a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+  transition:.3s;
 }
 
-.menu a:hover {
-  color: var(--color-secundario);
-}
+.menu a:hover{color:var(--color-secundario)}
 
-/* ===================== */
-/* BOTON MOVIL */
-/* ===================== */
-
-.menu-btn {
-  display: none;
-  font-size: 26px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-/* ===================== */
-/* RESPONSIVE */
-/* ===================== */
-
-@media (max-width: 768px) {
-
-  .logo-navbar {
-    height: 50px;
-  }
-
-  .navbar.scrolled .logo-navbar {
-    height: 40px;
-  }
-
-  .menu-btn {
-    display: block;
-  }
-
-  .menu {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: var(--color-primario);
-    flex-direction: column;
-    align-items: center;
-    display: none;
-    padding: 20px 0;
-    gap: 18px;
-  }
-
-  .menu.abierto {
-    display: flex;
-  }
-
+.menu-btn{
+  display:none;
+  font-size:26px;
+  background:none;
+  border:none;
+  color:#fff;
+  cursor:pointer;
 }
 
 /* ===================== */
 /* CALENDARIO */
 /* ===================== */
 
-.calendario-item{
-  position:relative;
-}
+.calendario-item{position:relative}
 
 /* widget */
 
@@ -128,10 +76,10 @@
   right:0;
 
   width:290px;
+  max-width:90vw;
 
-  background:white;
+  background:#fff;
   border-radius:12px;
-
   box-shadow:0 15px 30px rgba(0,0,0,.25);
 
   padding:16px;
@@ -139,11 +87,12 @@
   animation:abrirCalendario .25s ease;
 
   z-index:1000;
+
+  max-height:420px;
+  overflow:auto;
 }
 
-/* ===================== */
-/* HEADER CALENDARIO */
-/* ===================== */
+/* HEADER */
 
 .cal-header{
   display:flex;
@@ -160,7 +109,7 @@
 .cal-header button{
   border:none;
   background:var(--color-secundario);
-  color:white;
+  color:#fff;
   width:28px;
   height:28px;
   border-radius:6px;
@@ -169,13 +118,9 @@
   transition:.2s;
 }
 
-.cal-header button:hover{
-  transform:scale(1.1);
-}
+.cal-header button:hover{transform:scale(1.1)}
 
-/* ===================== */
 /* DIAS SEMANA */
-/* ===================== */
 
 .dias-semana{
   display:grid;
@@ -187,18 +132,12 @@
   color:#666;
 }
 
-/* ===================== */
 /* GRID CALENDARIO */
-/* ===================== */
 
 .grid{
   display:grid;
   grid-template-columns:repeat(7,1fr);
   gap:6px;
-  display:grid;
-  grid-template-columns:repeat(7,1fr);
-  gap:6px;
-  animation:fadeMes .25s ease;
 }
 
 /* DIA */
@@ -214,9 +153,7 @@
   transition:.2s;
 }
 
-.dia:hover{
-  background:#e6e6e6;
-}
+.dia:hover{background:#e6e6e6}
 
 /* DIA ACTUAL */
 
@@ -230,12 +167,10 @@
 
 .dia.evento{
   background:var(--color-secundario);
-  color:white;
+  color:#fff;
 }
 
-/* ===================== */
-/* INDICADOR EVENTO */
-/* ===================== */
+/* PUNTO EVENTO */
 
 .punto{
   position:absolute;
@@ -248,9 +183,7 @@
   transform:translateX(-50%);
 }
 
-/* ===================== */
-/* TOOLTIP EVENTO */
-/* ===================== */
+/* TOOLTIP */
 
 .tooltip{
   position:absolute;
@@ -259,10 +192,9 @@
   transform:translateX(-50%);
 
   background:#1f3a56;
-  color:white;
+  color:#fff;
 
   padding:6px 9px;
-
   border-radius:6px;
 
   font-size:11px;
@@ -274,22 +206,17 @@
   pointer-events:none;
 }
 
-/* flecha tooltip */
-
 .tooltip::after{
   content:"";
   position:absolute;
   top:100%;
   left:50%;
   transform:translateX(-50%);
-  border-width:6px;
-  border-style:solid;
-  border-color:#1f3a56 transparent transparent transparent;
+  border:6px solid transparent;
+  border-top-color:#1f3a56;
 }
 
-/* ===================== */
 /* LISTA EVENTOS */
-/* ===================== */
 
 .evento-lista{
   font-size:12px;
@@ -303,15 +230,80 @@
   color:var(--color-primario);
 }
 
-/* limitar altura */
+/* ===================== */
+/* BOTON CALENDARIO */
+/* ===================== */
 
-.calendario-widget h5{
-  margin-top:10px;
+.calendario-btn{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:transparent;
+  border:none;
+  color:#fff;
+  font-weight:500;
+  font-size:15px;
+  cursor:pointer;
+  padding:6px 10px;
+  border-radius:6px;
+  transition:.25s;
 }
 
-.calendario-widget{
-  max-height:420px;
-  overflow:auto;
+.calendario-btn:hover{
+  background:rgba(255,255,255,.12);
+  color:var(--color-secundario);
+}
+
+.flecha{
+  font-size:11px;
+  transition:.2s;
+}
+
+.calendario-btn:hover .flecha{
+  transform:translateY(1px);
+}
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media(max-width:768px){
+
+  .logo-navbar{height:50px}
+  .navbar.scrolled .logo-navbar{height:40px}
+
+  .menu-btn{display:block}
+
+  .menu{
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:var(--color-primario);
+    flex-direction:column;
+    align-items:center;
+    display:none;
+    padding:20px 0;
+    gap:18px;
+  }
+
+  .menu.abierto{display:flex}
+
+  /* calendario centrado en movil */
+
+  .calendario-widget{
+    right:auto;
+    left:50%;
+    transform:translateX(-50%);
+    width:95vw;
+  }
+
+  .tooltip{
+    white-space:normal;
+    width:120px;
+    text-align:center;
+  }
+
 }
 
 /* ===================== */
@@ -319,68 +311,12 @@
 /* ===================== */
 
 @keyframes abrirCalendario{
-
   from{
     opacity:0;
     transform:translateY(-10px);
   }
-
   to{
     opacity:1;
     transform:translateY(0);
   }
-
-}
-
-/* ===================== */
-/* BOTON CALENDARIO */
-/* ===================== */
-
-.calendario-btn{
-
-  display:flex;
-  align-items:center;
-  gap:6px;
-
-  background:transparent;
-  border:none;
-
-  color:white;
-  font-weight:500;
-  font-size:15px;
-
-  cursor:pointer;
-
-  padding:6px 10px;
-  border-radius:6px;
-
-  transition:all .25s ease;
-
-}
-
-/* hover */
-
-.calendario-btn:hover{
-
-  background:rgba(255,255,255,0.12);
-
-  color:var(--color-secundario);
-
-}
-
-/* flecha */
-
-.flecha{
-
-  font-size:11px;
-  transition:transform .2s ease;
-
-}
-
-/* animacion */
-
-.calendario-btn:hover .flecha{
-
-  transform:translateY(1px);
-
 }
