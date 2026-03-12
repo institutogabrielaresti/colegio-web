@@ -18,11 +18,11 @@ export class NosotrosComponent implements OnInit, OnDestroy {
   private intervaloId: any;
 
   galeria: string[] = [
-    'assets/galeria/imagen1.jpg',
-    'assets/galeria/imagen2.jpg',
-    'assets/galeria/imagen3.jpg',
-    'assets/galeria/imagen4.jpg',
-    'assets/galeria/imagen5.jpg'
+    'assets/galeria/imagen1.png',
+    'assets/galeria/imagen2.png',
+    'assets/galeria/imagen3.png',
+    'assets/galeria/imagen4.png',
+    'assets/galeria/imagen5.png'
   ];
 
   ngOnInit(): void {
