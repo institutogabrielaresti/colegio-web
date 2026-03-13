@@ -1,0 +1,19 @@
+{
+  "noticias": [
+    {
+      "titulo": "16 Marzo - Asueto Natalicio Benito Juárez",
+      "descripcion": "En conmemoración al natalicio de Benito Juárez habrá suspensión de labores.",
+      "fecha": "2026-03-16"
+    },
+    {
+      "titulo": "Inicio de Inscripciones",
+      "descripcion": "Abierto el proceso de admisión para el ciclo escolar 2026 - 2027.",
+      "fecha": "2026-04-01"
+    },
+    {
+      "titulo": "19 Marzo - Evento de Primavera",
+      "descripcion": "Evento de primavera para alumnos de preescolar y primaria menor. Inicio 9:00 a.m.",
+      "fecha": "2026-03-19"
+    }
+  ]
+}
