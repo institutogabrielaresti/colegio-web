@@ -32,7 +32,7 @@ fecha:this.fecha
 const repo='institutogabrielaresti/colegio-web'
 const path='src/assets/noticias.json'
 
-const token='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'
+const token='TU_TOKEN_GITHUB'
 
 const headers={
 Authorization:`Bearer ${token}`,
