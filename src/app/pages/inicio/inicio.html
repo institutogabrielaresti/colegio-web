@@ -125,26 +125,16 @@
 
   <div class="noticias-grid">
 
-    <div class="noticia-card">
-      <h3>16 Marzo.- Asueto Natalicio Benito Juarez</h3>
-      <p>
-        En conmemoracion al natalicio de Benito Juarez, el día 16 de Marzo habrá suspensión de labores.
-      </p>
-    </div>
+    <div class="noticia-card" *ngFor="let noticia of noticias">
 
-    <div class="noticia-card">
-      <h3>Inicio de Inscripciones</h3>
-      <p>
-        Abierto el proceso de admisión para el ciclo escolar 2026 - 2027.
-      </p>
-    </div>
+      <h3>{{noticia.titulo}}</h3>
 
-    <div class="noticia-card">
-      <h3>19 Marzo.- Evento de la primavera</h3>
-      <p>
-        El día 19 de Marzo es nuestro evento de la primavera, los alumnos de preescolar
-        y primaria menor participan. Hora inicio 9 a.m.
-      </p>
+      <p>{{noticia.descripcion}}</p>
+
+      <span class="fecha">
+        {{noticia.fecha}}
+      </span>
+
     </div>
 
   </div>

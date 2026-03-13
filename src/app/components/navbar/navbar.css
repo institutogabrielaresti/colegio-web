@@ -74,7 +74,7 @@
   position:absolute;
   top:45px;
   right:0;
-
+  
   width:290px;
   max-width:90vw;
 
@@ -89,7 +89,7 @@
   z-index:1000;
 
   max-height:420px;
-  overflow:auto;
+  overflow:visible;
 }
 
 /* HEADER */
@@ -186,34 +186,52 @@
 /* TOOLTIP */
 
 .tooltip{
+
   position:absolute;
-  bottom:130%;
+
+  bottom:140%;
   left:50%;
+
   transform:translateX(-50%);
 
   background:#1f3a56;
   color:#fff;
 
-  padding:6px 9px;
+  padding:6px 10px;
+
   border-radius:6px;
 
   font-size:11px;
 
-  white-space:nowrap;
+  max-width:140px;
+  width:max-content;
+
+  text-align:center;
+
+  white-space:normal;
 
   box-shadow:0 5px 12px rgba(0,0,0,.25);
 
   pointer-events:none;
+
+  z-index:20;
+
 }
 
 .tooltip::after{
+
   content:"";
+
   position:absolute;
+
   top:100%;
   left:50%;
+
   transform:translateX(-50%);
+
   border:6px solid transparent;
   border-top-color:#1f3a56;
+
 }
 
 /* LISTA EVENTOS */

@@ -156,6 +156,14 @@
   gap:25px;
 }
 
+.noticia-card .fecha{
+  display:block;
+  margin-top:10px;
+  font-size:12px;
+  color:var(--color-secundario);
+  font-weight:600;
+}
+
 /* TARJETAS */
 
 .porque-card,

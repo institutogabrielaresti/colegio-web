@@ -2,6 +2,7 @@ import { Component, OnInit, inject, PLATFORM_ID, ChangeDetectorRef } from '@angu
 import { AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-inicio',
@@ -18,6 +19,10 @@ export class InicioComponent implements OnInit {
   heroImage = 'assets/Edificio_IGA.png';
   bannerImage = 'assets/fondo-inscripciones.png';
 
+  noticias:any[] = [];
+
+  constructor(private http: HttpClient){}
+
   alumnos = 0;
   docentes = 0;
   experiencia = 0;
@@ -26,6 +31,12 @@ export class InicioComponent implements OnInit {
     if (isPlatformBrowser(this.platformId)) {
       this.animarContadores();
     }
+    this.http.get<any>('assets/noticias.json')
+      .subscribe(data => {
+
+        this.noticias = data.noticias;
+
+      });
   }
 
   animarContadores() {
