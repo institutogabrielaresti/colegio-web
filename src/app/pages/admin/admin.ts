@@ -30,9 +30,10 @@ fecha:this.fecha
 }
 
 const repo='institutogabrielaresti/colegio-web'
-const path='src/assets/noticias.json'
+const path='assets/noticias.json'
+const branch='gh-pages'
 
-const token='TU_TOKEN_GITHUB'
+const token='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'
 
 const headers={
 Authorization:`Bearer ${token}`,
@@ -42,7 +43,7 @@ Accept:'application/vnd.github+json'
 try{
 
 const file:any=await this.http.get(
-`https://api.github.com/repos/${repo}/contents/${path}`,
+`https://api.github.com/repos/${repo}/contents/${path}?ref=${branch}`,
 {headers}
 ).toPromise()
 
@@ -57,9 +58,10 @@ JSON.stringify(contenido,null,2)
 await this.http.put(
 `https://api.github.com/repos/${repo}/contents/${path}`,
 {
-message:'Nueva noticia publicada',
-content:actualizado,
-sha:file.sha
+  message:'Nueva noticia publicada',
+  content:actualizado,
+  sha:file.sha,
+  branch:branch
 },
 {headers}
 ).toPromise()

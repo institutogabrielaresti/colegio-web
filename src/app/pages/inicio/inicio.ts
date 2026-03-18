@@ -31,12 +31,15 @@ export class InicioComponent implements OnInit {
     if (isPlatformBrowser(this.platformId)) {
       this.animarContadores();
     }
-    this.http.get<any>('assets/noticias.json')
+    this.http.get<any>('assets/noticias.json?nocache=' + Date.now())
       .subscribe(data => {
-
-        this.noticias = data.noticias;
-
-      });
+        this.noticias = data.noticias
+        .sort((a:any,b:any)=>
+        new Date(b.fecha).getTime() -
+        new Date(a.fecha).getTime()
+        )
+      .slice(0,3);
+    });
   }
 
   animarContadores() {

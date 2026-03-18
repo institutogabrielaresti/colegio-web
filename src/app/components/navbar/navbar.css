@@ -72,24 +72,24 @@
 
 .calendario-widget{
   position:absolute;
-  top:45px;
+  top:50px;
   right:0;
   
-  width:290px;
-  max-width:90vw;
+  width:340px;
+  max-width:95vw;
 
   background:#fff;
-  border-radius:12px;
-  box-shadow:0 15px 30px rgba(0,0,0,.25);
+  border-radius:16px;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
 
-  padding:16px;
+  padding:18px;
 
   animation:abrirCalendario .25s ease;
 
   z-index:1000;
 
   max-height:420px;
-  overflow:visible;
+  overflow-y:auto; /* 🔥 CORRECCIÓN CLAVE */
 }
 
 /* HEADER */
@@ -137,15 +137,15 @@
 .grid{
   display:grid;
   grid-template-columns:repeat(7,1fr);
-  gap:6px;
+  gap:8px; /* más aire */
 }
 
 /* DIA */
 
 .dia{
   text-align:center;
-  padding:6px;
-  border-radius:6px;
+  padding:10px 0;
+  border-radius:10px;
   font-size:13px;
   background:#f3f3f3;
   position:relative;
@@ -203,19 +203,18 @@
 
   font-size:11px;
 
-  max-width:140px;
+  max-width:160px;
   width:max-content;
 
   text-align:center;
 
   white-space:normal;
 
-  box-shadow:0 5px 12px rgba(0,0,0,.25);
+  box-shadow:0 6px 15px rgba(0,0,0,.25);
 
   pointer-events:none;
 
-  z-index:20;
-
+  z-index:2000; /* 🔥 importante */
 }
 
 .tooltip::after{
@@ -238,9 +237,11 @@
 
 .evento-lista{
   font-size:12px;
-  margin-top:8px;
-  border-bottom:1px solid #eee;
-  padding-bottom:4px;
+  margin-top:10px;
+  padding:8px;
+  border-radius:8px;
+  background:#f8f9fb;
+  border-left:4px solid var(--color-secundario);
 }
 
 .fecha{
@@ -317,9 +318,8 @@
   }
 
   .tooltip{
-    white-space:normal;
-    width:120px;
-    text-align:center;
+    width:130px;
+    font-size:10px;
   }
 
 }
