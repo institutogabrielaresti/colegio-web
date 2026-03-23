@@ -1,0 +1,45 @@
+name: Actualizar Noticias
+
+on:
+  workflow_dispatch:
+    inputs:
+      titulo:
+        required: true
+      descripcion:
+        required: true
+      fecha:
+        required: true
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Actualizar JSON
+        run: |
+          FILE="src/assets/noticias.json"
+
+          echo "Leyendo archivo..."
+
+          CONTENT=$(cat $FILE)
+
+          NUEVA='{"titulo":"${{ github.event.inputs.titulo }}","descripcion":"${{ github.event.inputs.descripcion }}","fecha":"${{ github.event.inputs.fecha }}"}'
+
+          jq ".noticias |= [ $NUEVA ] + ." $FILE > temp.json
+
+          mv temp.json $FILE
+
+      - name: Commit cambios
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+          git add .
+          git commit -m "Nueva noticia desde admin"
+
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

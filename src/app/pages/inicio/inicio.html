@@ -1,9 +1,17 @@
+<!-- ========================= -->
 <!-- INSCRIPCIONES -->
-<section class="cta-inscripciones" [ngStyle]="{'background-image': 'url(' + bannerImage + ')'}">
+<!-- ========================= -->
+<section class="cta-inscripciones"
+  [ngStyle]="{'background-image': 'url(' + bannerImage + ')'}">
+
   <div class="cta-contenido">
 
     <h2>Inscripciones Abiertas 2026 - 2027</h2>
-    <p>Forma parte de nuestra comunidad educativa y construye tu futuro con nosotros.</p>
+
+    <p>
+      Forma parte de nuestra comunidad educativa y construye tu futuro con nosotros.
+    </p>
+
     <a routerLink="/contacto" class="cta-btn">
       Solicitar Información
     </a>
@@ -13,7 +21,12 @@
 </section>
 
 
-<section class="hero" [style.background-image]="'url(' + heroImage + ')'">
+<!-- ========================= -->
+<!-- HERO -->
+<!-- ========================= -->
+<section class="hero"
+  [style.background-image]="'url(' + heroImage + ')'">
+
   <div class="hero-contenido fade-in">
 
     <h1>Instituto Gabriel Aresti</h1>
@@ -24,9 +37,13 @@
     </a>
 
   </div>
+
 </section>
 
-<!--Alianzas-->
+
+<!-- ========================= -->
+<!-- ALIANZAS -->
+<!-- ========================= -->
 <section class="alianzas">
 
   <h2>Alianzas Educativas</h2>
@@ -35,25 +52,26 @@
 
     <div class="logos-slider">
 
-      <img src="assets/alianzas/unitec.jpg" alt="Unitec">
-      <img src="assets/alianzas/uerre.png" alt="U-ERRE">
-      <img src="assets/alianzas/uinter.png" alt="Uinter">
-      <img src="assets/alianzas/tecmilenio.png" alt="Tec Milenio">
-      <img src="assets/alianzas/sep.jpg" alt="SEP">
-      <img src="assets/alianzas/estantemagico.png" alt="Estante Magico">
-      <img src="assets/alianzas/mcmilan.png" alt="Mc Milan">
-      <img src="assets/alianzas/edelvives.png" alt="Edelvives">
-      <img src="assets/alianzas/larousse.png" alt="Larousse">
-      <!-- duplicados para loop infinito -->
-      <img src="assets/alianzas/unitec.jpg" >
-      <img src="assets/alianzas/uerre.png" >
-      <img src="assets/alianzas/uinter.png" >
-      <img src="assets/alianzas/tecmilenio.png" >
-      <img src="assets/alianzas/sep.jpg" >
-      <img src="assets/alianzas/estantemagico.png" >
-      <img src="assets/alianzas/mcmilan.png" >
-      <img src="assets/alianzas/edelvives.png" >
-      <img src="assets/alianzas/larousse.png" >
+      <img src="assets/alianzas/unitec.jpg" alt="Universidad Unitec" loading="lazy">
+      <img src="assets/alianzas/uerre.png" alt="Universidad U-ERRE" loading="lazy">
+      <img src="assets/alianzas/uinter.png" alt="Universidad Uinter" loading="lazy">
+      <img src="assets/alianzas/tecmilenio.png" alt="Tec Milenio" loading="lazy">
+      <img src="assets/alianzas/sep.jpg" alt="Secretaría de Educación Pública" loading="lazy">
+      <img src="assets/alianzas/estantemagico.png" alt="Estante Mágico" loading="lazy">
+      <img src="assets/alianzas/mcmilan.png" alt="Mc Milan" loading="lazy">
+      <img src="assets/alianzas/edelvives.png" alt="Editorial Edelvives" loading="lazy">
+      <img src="assets/alianzas/larousse.png" alt="Editorial Larousse" loading="lazy">
+
+      <!-- duplicados para efecto infinito -->
+      <img src="assets/alianzas/unitec.jpg" alt="" loading="lazy">
+      <img src="assets/alianzas/uerre.png" alt="" loading="lazy">
+      <img src="assets/alianzas/uinter.png" alt="" loading="lazy">
+      <img src="assets/alianzas/tecmilenio.png" alt="" loading="lazy">
+      <img src="assets/alianzas/sep.jpg" alt="" loading="lazy">
+      <img src="assets/alianzas/estantemagico.png" alt="" loading="lazy">
+      <img src="assets/alianzas/mcmilan.png" alt="" loading="lazy">
+      <img src="assets/alianzas/edelvives.png" alt="" loading="lazy">
+      <img src="assets/alianzas/larousse.png" alt="" loading="lazy">
 
     </div>
 
@@ -61,7 +79,10 @@
 
 </section>
 
+
+<!-- ========================= -->
 <!-- POR QUÉ ELEGIRNOS -->
+<!-- ========================= -->
 <section class="porque fade-in">
 
   <h2>¿Por qué elegirnos?</h2>
@@ -97,7 +118,9 @@
 </section>
 
 
-<!--Oferta Educativa-->
+<!-- ========================= -->
+<!-- OFERTA EDUCATIVA -->
+<!-- ========================= -->
 <section class="info fade-in">
 
   <div class="card">
@@ -118,21 +141,24 @@
 </section>
 
 
-<!-- NOTICIAS -->
+<!-- ========================= -->
+<!-- NOTICIAS DINÁMICAS -->
+<!-- ========================= -->
 <section class="noticias">
 
   <h2>Últimas Noticias</h2>
 
   <div class="noticias-grid">
 
-    <div class="noticia-card" *ngFor="let noticia of noticias">
+    <div class="noticia-card"
+         *ngFor="let noticia of noticias">
 
-      <h3>{{noticia.titulo}}</h3>
+      <h3>{{ noticia.titulo }}</h3>
 
-      <p>{{noticia.descripcion}}</p>
+      <p>{{ noticia.descripcion }}</p>
 
       <span class="fecha">
-        {{noticia.fecha}}
+        {{ noticia.fecha | date:'dd MMM yyyy' }}
       </span>
 
     </div>
