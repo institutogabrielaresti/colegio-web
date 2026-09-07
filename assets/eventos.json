@@ -1,40 +1,152 @@
 {
   "eventos": [
     {
-      "fecha": "2026-03-16",
-      "titulo": "Asueto Escolar Natalicio Benito Jaurez"
-    },
-    {
-      "fecha": "2026-06-26",
-      "titulo": "Consejo Tecnico"
-    },
-    {
-      "fecha": "2026-05-05",
-      "titulo": "Asueto Batalla de Puebla"
-    },
-    {
-      "fecha": "2026-05-15",
-      "titulo": "Día del Maestro"
-    },
-    {
-      "fecha": "2026-03-30",
-      "titulo": "Inicio de Vacaciones Semana Santa"
+      "fecha": "2026-03-27",
+      "titulo": "Consejo Tecnico "
     },
     {
       "fecha": "2026-04-13",
       "titulo": "Regreso Clases Vacaciones Semana Santa"
     },
     {
-      "fecha": "2026-03-27",
-      "titulo": "Consejo Tecnico "
+      "fecha": "2026-05-05",
+      "titulo": "Asueto Batalla de Puebla"
+    },
+    {
+      "fecha": "2027-02-01",
+      "titulo": "Asueto"
+    },
+    {
+      "fecha": "2027-05-28",
+      "titulo": "Consejo Técnico"
+    },
+    {
+      "fecha": "2026-11-16",
+      "titulo": "Asueto"
+    },
+    {
+      "fecha": "2027-02-02",
+      "titulo": "Preinscripciones"
+    },
+    {
+      "fecha": "2027-04-30",
+      "titulo": "Consejo Técnico"
+    },
+    {
+      "fecha": "2027-07-08",
+      "titulo": "Entrega de Calificaciones"
+    },
+    {
+      "fecha": "2026-11-27",
+      "titulo": "Consejo Técnico"
+    },
+    {
+      "fecha": "2027-07-02",
+      "titulo": "Registro de Calificaciones"
+    },
+    {
+      "fecha": "2027-05-05",
+      "titulo": "Asueto"
+    },
+    {
+      "fecha": "2027-02-08",
+      "titulo": "Preinscripciones"
+    },
+    {
+      "fecha": "2026-11-23",
+      "titulo": "Entrega de Calificaciones"
+    },
+    {
+      "fecha": "2026-05-15",
+      "titulo": "Día del Maestro"
+    },
+    {
+      "fecha": "2026-09-18",
+      "titulo": "Noche Méxicana "
+    },
+    {
+      "fecha": "2026-10-30",
+      "titulo": "Consejo Técnico"
+    },
+    {
+      "fecha": "2026-11-02",
+      "titulo": "Asueto"
+    },
+    {
+      "fecha": "2027-04-02",
+      "titulo": "Fin Vacaciones Semana Santa"
+    },
+    {
+      "fecha": "2027-03-15",
+      "titulo": "Asueto"
+    },
+    {
+      "fecha": "2026-05-01",
+      "titulo": "Asueto día del Trabajo"
+    },
+    {
+      "fecha": "2027-02-26",
+      "titulo": "Consejo Técnico"
+    },
+    {
+      "fecha": "2026-03-30",
+      "titulo": "Inicio de Vacaciones Semana Santa"
+    },
+    {
+      "fecha": "2026-12-21",
+      "titulo": "Inicio Vacaciones Invierno"
+    },
+    {
+      "fecha": "2027-03-16",
+      "titulo": "Entrega de Calificaciones"
     },
     {
       "fecha": "2026-05-29",
       "titulo": "Consejo Tecnico"
     },
     {
-      "fecha": "2026-05-01",
-      "titulo": "Asueto día del Trabajo"
+      "fecha": "2027-01-06",
+      "titulo": "Asueto"
+    },
+    {
+      "fecha": "2026-06-26",
+      "titulo": "Consejo Tecnico"
+    },
+    {
+      "fecha": "2027-03-22",
+      "titulo": "Inicio Vacaciones Semana Santa"
+    },
+    {
+      "fecha": "2027-01-05",
+      "titulo": "Fin de Vacaciones Invierno"
+    },
+    {
+      "fecha": "2027-01-29",
+      "titulo": "Consejo Técnico"
+    },
+    {
+      "fecha": "2027-03-05",
+      "titulo": "Registro de Calificaciones"
+    },
+    {
+      "fecha": "2026-09-25",
+      "titulo": "Consejo Técnico"
+    },
+    {
+      "fecha": "2026-09-16",
+      "titulo": "Asueto"
+    },
+    {
+      "fecha": "2026-03-16",
+      "titulo": "Asueto Escolar Natalicio Benito Jaurez"
+    },
+    {
+      "fecha": "2026-11-13",
+      "titulo": "Registro de Calificaciones"
+    },
+    {
+      "fecha": "2027-06-25",
+      "titulo": "Consejo Técnico"
     }
   ]
 }
